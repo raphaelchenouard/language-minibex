@@ -25,8 +25,12 @@ patterns: [ # An array of individual pattern declarations.
     name: "constant.numeric"
   }
   {
-    'match': '\\b(constants|variables|constraints|function|end|minimize|maximize|return|Return|in|for)\\b'
+    'match': '\\b(constants|Constants|CONSTANTS|variables|Variables|VARIABLES|constraints|Constraints|CONSTRAINTS|parameters|Paramaters|PARAMETERS|function|Function|FUNCTION|end|End|END|minimize|Minimize|MINIMIZE|maximize|Maximize|MAXIMIZE|return|Return|RETURN|in|for|For|FOR|begin|Begin|BEGIN)\\b'
     'name': 'keyword.control'
+  }
+  {
+    match: "\\b(oo)\\b"
+    name: "constant.numeric"
   }
   {
     match: "<|<\\=|>|>\\=|\\=|<>"
@@ -37,7 +41,7 @@ patterns: [ # An array of individual pattern declarations.
     name: "keyword.operator.arithmetic"
   }
   {
-    match: "\\b(acos|asin|atan|atan2|cos|cosh|exp|log|log10|sin|sinh|tan|tanh|abs|sqrt|max|min)\\b"
+    match: "\\b(acos|asin|atan|atan2|sign|cos|cosh|exp|log|ln|sin|sinh|tan|tanh|acosh|asinh|atanh|chi|abs|sqrt|max|min|mid|sup|inf)\\b"
     name: "support.function.mathematical"
   }
 ]
