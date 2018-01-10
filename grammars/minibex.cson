@@ -1,0 +1,43 @@
+# TextMate tutorial: http://manual.macromates.com/en/language_grammars
+
+# Regex to convert keys to unquoted: '(include|match|captures|begin|end|beginCaptures|endCaptures|name|patterns|0|1|2|3|4|5|6|7|8|9|comment|fileTypes|scopeName|repository|contentName|firstLineMatch|foldingStartMarker|foldingStopMarker)':
+
+scopeName: 'source.minibex' # <scope> should be a short, unique indicator for the language ("js", "php", "c", etc.)
+name: 'MinIbex' # The title that will show up in grammar selection and on your status bar.
+fileTypes: [ # An array of file extensions.
+  'mbx'
+]
+firstLineMatch: '' # A regular expression that is matched against the first line of the document when Atom is trying to decide if the grammar is appropriate. Useful for shell scripts, mostly.
+foldingStartMarker: '' # A regular expression that checks for the start of a foldable area (such as `{`).
+foldingStopMarker: '' # A regular expression that checks for the end of a foldable area (such as `}`). If both folding markers are matched in the same line, there will be no foldable area.
+patterns: [ # An array of individual pattern declarations.
+  {
+    begin: "/\\*"
+    end: "\\*/"
+    name: "comment.block"
+  }
+  {
+    match: "(//).*$\\n?"
+    name: "comment.line"
+  }
+  {
+    match: "\\b((0(x|X)[0-9a-fA-F]*)|(([0-9]+\\.?[0-9]*)|(\\.[0-9]+))((e|E)(\\+|-)?[0-9]+)?)\\b"
+    name: "constant.numeric"
+  }
+  {
+    'match': '\\b(constants|variables|constraints|function|end|minimize|maximize|return|Return|in|for)\\b'
+    'name': 'keyword.control'
+  }
+  {
+    match: "<|<\\=|>|>\\=|\\=|<>"
+    name: "keyword.operator.comparison"
+  }
+  {
+    match: "\\+|\\-|\\*|/|\\^"
+    name: "keyword.operator.arithmetic"
+  }
+  {
+    match: "\\b(acos|asin|atan|atan2|cos|cosh|exp|log|log10|sin|sinh|tan|tanh|abs|sqrt|max|min)\\b"
+    name: "support.function.mathematical"
+  }
+]
