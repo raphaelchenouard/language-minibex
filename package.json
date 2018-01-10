@@ -1,6 +1,6 @@
 {
   "name": "language-minibex",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Syntax for MinIbex mathematical language used to define models for IBEX solver",
   "repository": "https://github.com/raphaelchenouard/language-minibex",
   "license": "MIT",
